@@ -1,0 +1,13 @@
+.cuadro {
+  border: black 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: repeat(10, 80px);
+  grid-auto-rows: 80px;
+  place-content: center;
+}

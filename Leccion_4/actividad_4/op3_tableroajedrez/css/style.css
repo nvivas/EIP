@@ -1,0 +1,16 @@
+.cuadro {
+  border: black 1px solid;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(9, 100px);
+  grid-auto-rows: 100px;
+  place-content: center;
+}
+
+.numeros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

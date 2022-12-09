@@ -1,0 +1,35 @@
+.item {
+  padding: 16px;
+  width: 130px;
+  border: black 1px solid;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  border: black 1px solid;
+  font-size: 50px;
+}
+
+h2 {
+  color: blue;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

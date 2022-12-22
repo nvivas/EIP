@@ -1,0 +1,14 @@
+.celda {
+  margin-top: 24px;
+}
+
+.etiqueta {
+  margin-right: 12px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

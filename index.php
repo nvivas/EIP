@@ -42,9 +42,26 @@
         </tr>
         <tr>
             <td><a href='./Leccion_4/teoria_4.php' style="display: none"> Teoria 4 </a></td>
-            <td><a href='./Leccion_4/actividad_4/index.php'>Actividad 4</a>
-            </td>
+            <td><a href='./Leccion_4/actividad_4/index.php'>Actividad 4</a></td>
             <td><a href='./Leccion_4/tutor_4.php'> Clase Tutor 4 </a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href='./Leccion_5/actividad_5/index.php'>Actividad 5</a>
+                <a href='./Leccion_5/opcional_5/index.php'>Opcional</a>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href='./Leccion_6/actividad_6/index.php'>Actividad 6</a>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href='./Leccion_7/teoria_7.php'> Teoria 7 </a></td>
+            <td><a href='./Leccion_7/actividad_7/index.php'>Actividad 7</a></td>
+            <td></td>
         </tr>
 
     </table>

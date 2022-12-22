@@ -1,0 +1,39 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#num1,
+#num2,
+#operador {
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#formulario {
+  display: flex;
+  justify-content: center;
+  gap: 210px;
+}
+
+.boton {
+  width: 200px;
+  height: 100px;
+}
+
+.contenedor_boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#solucion {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 100px;
+}

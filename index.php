@@ -53,7 +53,7 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
+            <td><a href='./Leccion_6/teoria_6.php'> Teoria 6 </a></td>
             <td><a href='./Leccion_6/actividad_6/index.php'>Actividad 6</a>
             </td>
             <td></td>
@@ -62,6 +62,11 @@
             <td><a href='./Leccion_7/teoria_7.php'> Teoria 7 </a></td>
             <td><a href='./Leccion_7/actividad_7/index.php'>Actividad 7</a></td>
             <td></td>
+        </tr>
+        <tr>
+            <td><a href='./Leccion_8/teoria_8/index.php'> Teoria 8 </a></td>
+            <td><a href='./Leccion_8/actividad_8/index.php'>Actividad 8</a></td>
+            <td><a href='./Leccion_8/prueba/index.php'>Prueba 8</a></td>
         </tr>
 
     </table>

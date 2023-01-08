@@ -48,7 +48,7 @@ $products = [
         "id" => 6,
         "title" => "Silla Gaming",
         "description" => "AOC 24G2SAE/BK 23.8'' LED FullHD 165Hz FreeSync Premium",
-        "img" => "Nacon CH-550 Silla Gaming",
+        "img" => "https://thumb.pccomponentes.com/w-530-530/articles/28/289561/nacon-ch-550-silla-gaming.jpg",
         "price" =>  118.99
     ]
 
@@ -88,7 +88,7 @@ $products = [
         </ul>
     </nav>
     <main>
-
+        <a href="../../index.php">Volver al menú principal</a>
         <form action="" method="get" class="d-flex  justify-content-center mb-4 gap-3">
             <label for="buscar">Buscar: </label>
             <input type="search" name="buscar">
@@ -99,38 +99,69 @@ $products = [
         <div class="container">
             <div class="row">
                 <!-- Recorrer con bucle FOREACH $productos -->
+
+
                 <?php
 
-                foreach ($products as $product) {
+                $buscar = isset($_GET['buscar']) ?  $_GET['buscar'] : "";
+
+                // echo "<pre>";
+                // print_r($_GET);
+                // echo "</pre>";
+
+                $filtrados = array();
+
+                if (empty($buscar)) {
+                    foreach ($products as $product) {
+                        mostrar($product);
+                    }
+                } else {
+                    for ($i = 0; $i < count($products); $i++) {
+                        if ((strstr(strtoupper($products[$i]['title']), strtoupper($buscar)))) {
+                            array_push($filtrados, $products[$i]);
+                        }
+                    }
+                }
+
+                foreach ($filtrados as $filtrado) {
+                    mostrar($filtrado);
+                }
+
+                // echo "<pre>";
+                // print_r($filtrados);
+                // echo "</pre>";
+
+                function mostrar($filtrado)
+                {
                 ?>
                     <div class="card" style="width: 18rem;">
-                        <img src=<?= $product['img'] ?> alt="">
+                        <img src=<?= $filtrado['img'] ?> alt="">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $product['title'] ?></h5>
-                            <p class="card-text"><?= $product['description'] ?><br>
-                                <b> <?= $product['price'] ?> </b>
+                            <h5 class="card-title"><?= $filtrado['title'] ?></h5>
+                            <p class="card-text"><?= $filtrado['description'] ?><br>
+                                <b> <?= $filtrado['price'] ?> </b>
                             </p>
                             <a href="#" class="btn btn-primary"> Ver </a>
                             <a href="#" class="btn btn-primary"> Añadir </a>
                         </div>
                     </div>
+
                 <?php
                 }
+
                 ?>
                 <!-- Fin del bucle FOREACH -->
             </div>
         </div>
+
     </main>
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col-4">Autor: Tú </div>
-            </div>
-        </div>
+        <address class="d-flex justify-content-center">
+            <p>Autor: Ignacio Vivas Martín &copy;</p>
+        </address>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 

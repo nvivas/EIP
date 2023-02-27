@@ -68,6 +68,11 @@
             <td><a href='./Leccion_8/actividad_8/index.php'>Actividad 8</a></td>
             <td><a href='./Leccion_8/prueba/index.php'>Prueba 8</a></td>
         </tr>
+        <tr>
+            <td></td>
+            <td><a href='./Leccion_12/actividad_12/index.php'>Actividad 12</a></td>
+            <td></td>
+        </tr>
 
     </table>
 </body>

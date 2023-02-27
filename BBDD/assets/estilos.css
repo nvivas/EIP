@@ -1,0 +1,71 @@
+h2 {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 10px;
+}
+
+td {
+  color: green;
+}
+
+th {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
+.insertar,
+.buscar {
+  padding: 8px;
+  border: 1px solid black;
+  background: rgb(233, 193, 14);
+  border-radius: 5px;
+  color: white;
+}
+
+.crud {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 16px;
+}
+
+.volver {
+  margin-top: 32px;
+  border: 1px solid black;
+  padding: 12px;
+  background: rgb(233, 193, 14);
+  color: white;
+  border-radius: 22px;
+}
+
+#cliente,
+#habitacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 350px;
+}

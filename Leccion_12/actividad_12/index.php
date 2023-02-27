@@ -1,7 +1,3 @@
-<?php
-// Recogida de datos 
-// validaciones de Login
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +12,13 @@
 </head>
 
 <body>
-    <?php
-    $correcto = false;
 
-    echo "Variable " . $correcto;
-    // require_once("./nav.php");
+    <?php
+    session_start();
+
+    if (isset($_POST['login'])) {
+        $_SESSION['correo'] = $_POST['correo'];
+    }
     ?>
     <main>
         <div class="container">
@@ -28,23 +26,17 @@
                 <div class="col-12">
                     <?php
                     // 2. Recoger la información y proteger las validaciones
-                    $correo = isset($_POST['correo']) ? $_POST['correo'] : "";
+                    $correo = isset($_SESSION['correo']) ? $_SESSION['correo'] : "";
                     $contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : "";
 
                     if (isTodoCorrecto()) {
-                        $correcto = false;
-                        require("./nav.php");
                         require_once("./correcto.php");
                     } else {
-                        $correcto = true;
-                        require("./nav.php");
                         require_once("./formulario.php");
                     }
 
-                    echo "</br>";
 
-                    if (!empty($contraseña) || !empty($correo)) {
-
+                    if (!empty($contraseña)) {
                         // 3.2 El correo tenga formato de correo (texto@texto.texto)
                         if (isValido()) {
                     ?>
@@ -53,14 +45,11 @@
                             // echo "Esta dirección de correo $correo NO es válida.";
                         }
 
-                        echo "</br>";
                         // 3.3 La contraseña tiene que tener al menos 6 caracteres"
 
                         if (!isMax()) {
                             echo "La contraseña $contraseña no es válida";
                         }
-                        echo "</br>";
-
                         // 3.3 No puede contener las palabras "password" ni "123456"
                         if (!isPass() || !isNum()) {
                             echo "No puede tener ni 'password' ni '123456' en la contraseña: '$contraseña'"; // false
@@ -69,9 +58,11 @@
                         // 3.1 Campos obligatorios: email y contraseña (no pueden ser vacíos)
                         echo "El correo o la contraseña está vacío </br>";
                     }
+
+
                     function isTodoCorrecto()
                     {
-                        if (isVacio() && !isValido() && isVacio() && isMax() && isPass() && isNum()) {
+                        if (isVacio() && !isValido() && isMax() && isPass() && isNum()) {
                             return true;
                         }
                     }
@@ -116,6 +107,11 @@
                         $posNum = strpos($contraseña, $numerosProhibida);
 
                         return $posNum === false;
+                    }
+
+                    if (isset($_POST['logout'])) {
+                        unset($_SESSION);
+                        session_destroy();
                     }
                     ?>
                 </div>

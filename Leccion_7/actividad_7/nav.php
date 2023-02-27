@@ -6,14 +6,13 @@
                  <a class="link" href="#">Contacto</a>
                  <li class="nav-item">
                          <?php
-                                if (isTodoCorrecto()) {
-                                        echo '<a class="btn btn-outline-danger" href="#">Logout</a>';
-                                } else {
+                                if ($correcto) {
                                         echo '<a class="btn btn-outline-light" href="#">Login</a>';
+                                } else {
+                                        echo '<a class="btn btn-outline-danger" href="#">Logout</a>';
                                 }
                                 ?>
 
-                         <!-- <a class="btn btn-outline-danger" href="#">Logout</a> -->
                  </li>
          </ul>
  </nav>

@@ -1,5 +1,7 @@
 <?php
 require_once('./conexion.php');
+
+$collection = $habitacion->nacho->habitacion;
 ?>
 <!DOCTYPE html>
 <html lang="es">

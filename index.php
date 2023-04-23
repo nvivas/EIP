@@ -73,6 +73,16 @@
             <td><a href='./Leccion_12/actividad_12/index.php'>Actividad 12</a></td>
             <td></td>
         </tr>
+        <tr>
+            <td></td>
+            <td><a href='./MongoDB/index.php'>MongoDB</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href='./Desarrollo_aplicaciones_Seguras/Leccion_1/owaps-vulnerabilidades.php'>OWAPS</a></td>
+            <td></td>
+        </tr>
 
     </table>
 </body>

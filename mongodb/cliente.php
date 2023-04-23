@@ -2,8 +2,10 @@
 
 require_once('./conexion.php');
 
-// consulta SQL
-$res = "SELECT * FROM cliente;";
+$collection = $cliente->nacho->cliente;
+
+$filtro = ["cliente" => "cliente"];
+$resultado = $collection->find($filtro);
 
 // se prepara HTML
 
@@ -27,6 +29,3 @@ $res = "SELECT * FROM cliente;";
 </body>
 
 </html>
-<?php
-mysqli_free_result($resultado);
-?>

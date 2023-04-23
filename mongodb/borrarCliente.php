@@ -1,14 +1,15 @@
 <?php
 require_once('./conexion.php');
 
+$collection = $cliente->nacho->cliente;
+
 $dni = $_GET['dni'];
 
-// consulta SQL
-$borrar = "DELETE FROM cliente WHERE dni='$dni'";
-$com = "commit;";
+// Eliminar un solo documento
+$resultado = $database->cliente->deleteOne(["dni" => $dni]);
 
-// Ejecutar la sentencia
-$resultado = mysqli_query($conexion, $borrar);
+echo "Documento eliminado: " . $resultado->getDeletedCount() . "\n";
+
 ?>
 
 <!DOCTYPE html>
@@ -19,31 +20,9 @@ $resultado = mysqli_query($conexion, $borrar);
 </head>
 
 <body>
-	<?php
-
-	if (mysqli_errno($conexion) == 1451) {
-	?>
-		<h2>No se puede borrar el cliente porque tiene habitación asignada</h2>
-		<div class="volver">
-			<a href='cliente.php'>VOLVER</a>
-		</div>
-	<?php
-
-	} else {
-	?>
-		<h2>Se ha eliminado <?= $dni ?></h2>
-
-		<?php
-		$error = mysqli_error($conexion);
-		echo $error;
-		?>
-		<div class="volver">
-			<a href='cliente.php'>VOLVER</a>
-		</div>
-	<?php
-		$resultado = mysqli_query($conexion, $com);
-	}
-	?>
+	<div class="volver">
+		<a href='cliente.php'>VOLVER</a>
+	</div>
 </body>
 
 </html>

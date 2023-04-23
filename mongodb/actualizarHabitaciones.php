@@ -2,11 +2,13 @@
 
 require_once('./conexion.php');
 
+$collection = $habitacion->nacho->habitacion;
+
 $snum_habitacion = $_GET['num_habitacion'];
 
-// consulta SQL
-$res = "SELECT * FROM habitacion WHERE num_habitacion='$snum_habitacion'";
-$resultado = mysqli_query($conexion, $res);
+$filtro = ["num_habitacion" => $snum_habitacion];
+
+$resultado = $collection->find($filtro);
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +19,12 @@ $resultado = mysqli_query($conexion, $res);
 </head>
 
 <body>
-
-
 	<form method='post' action='actualizarDatosHabitaciones.php' name='formulario2' onSubmit='return Valida(this);'>
 		<?php
-		while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+		// Ejecutar una consulta y obtener un cursor
+		$cursor = $collection->find();
+
+		foreach ($cursor as $document) {
 		?>
 
 			<div class="contenedorForm">

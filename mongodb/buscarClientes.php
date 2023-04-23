@@ -1,5 +1,7 @@
 <?php
 require_once('./conexion.php');
+
+$collection = $cliente->nacho->cliente;
 ?>
 
 <!DOCTYPE html>

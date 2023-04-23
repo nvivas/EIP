@@ -2,11 +2,13 @@
 
 require_once('./conexion.php');
 
+$collection = $cliente->nacho->cliente;
+
 $sdni = $_GET['dni'];
 
-// consulta SQL
-$res = "SELECT * FROM cliente WHERE dni='$sdni'";
-$resultado = mysqli_query($conexion, $res);
+$filtro = ["dni" => $sdni];
+
+$resultado = $collection->find($filtro);
 
 ?>
 
@@ -22,7 +24,10 @@ $resultado = mysqli_query($conexion, $res);
 
 	<form method='post' action='actualizarDatosCliente.php' name='formulario1' onSubmit='return Valida(this);'>
 		<?php
-		while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+		// Ejecutar una consulta y obtener un cursor
+		$cursor = $collection->find();
+
+		foreach ($cursor as $document) {
 		?>
 			<div class="contenedorForm">
 				<div class="item">

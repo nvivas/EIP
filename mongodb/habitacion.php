@@ -1,9 +1,10 @@
 <?php
 require_once('./conexion.php');
 
-// consulta SQL
-$res = "SELECT * FROM habitacion";
-$resultado = mysqli_query($conexion, $res);
+$collection = $habitacion->nacho->habitacion;
+
+$filtro = ["habitacion" => "habitacion"];
+$resultado = $collection->find($filtro);
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,3 @@ $resultado = mysqli_query($conexion, $res);
 </body>
 
 </html>
-<?php
-mysqli_free_result($resultado);
-?>
